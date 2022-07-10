@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::controller(TodoController::class)
+        ->prefix('/todos')
+        ->name('todo.')
+        ->group(function(){
+        
+Route::get('/about','about')->name('about');
+Route::get('/editTask','edit')->name('edit');
+Route::get('/createTask' ,'createTask')->name('createTask');
+Route::get('/taskList' ,'taskList')->name('taskList');
+Route::post('/taskStore' ,'store')->name('taskStore');
+Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');
+Route::post('/findOne','findOne')->name('findOne');
+Route::post('/remove' ,'remove')->name('remove');
+Route::get('/findTask' ,'search')->name('search'); 
+
+        });
+

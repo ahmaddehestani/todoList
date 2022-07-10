@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class ItemSeeder extends Seeder
 {
@@ -41,7 +44,7 @@ class ItemSeeder extends Seeder
                 "title" => "play1",
                 "description" => "football",
                 "createTime"=>$dateNow,
-                "status" => "outdoor",
+                "status" => "pending",
                 "statusTime"=>$dateNow,
                 "category"=>2
             ],
