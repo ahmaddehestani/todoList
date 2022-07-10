@@ -20,20 +20,20 @@ use App\Http\Controllers\ItemController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::controller(TodoController::class)
+Route::controller(ItemController::class)
         ->prefix('/todos')
         ->name('todo.')
         ->group(function(){
         
-Route::get('/about','about')->name('about');
-Route::get('/editTask','edit')->name('edit');
-Route::get('/createTask' ,'createTask')->name('createTask');
+//Route::get('/about','about')->name('about');
+//Route::get('/editTask','edit')->name('edit');
+//Route::get('/createTask' ,'createTask')->name('createTask');
 Route::get('/taskList' ,'taskList')->name('taskList');
-Route::post('/taskStore' ,'store')->name('taskStore');
-Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');
-Route::post('/findOne','findOne')->name('findOne');
-Route::post('/remove' ,'remove')->name('remove');
-Route::get('/findTask' ,'search')->name('search'); 
+//Route::post('/taskStore' ,'store')->name('taskStore');
+//Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');
+//Route::post('/findOne','findOne')->name('findOne');
+//Route::post('/remove' ,'remove')->name('remove');
+//Route::get('/findTask' ,'search')->name('search'); 
 
         });
 
