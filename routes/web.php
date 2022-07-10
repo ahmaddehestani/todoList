@@ -27,7 +27,7 @@ Route::controller(ItemController::class)
         
 //Route::get('/about','about')->name('about');
 //Route::get('/editTask','edit')->name('edit');
-//Route::get('/createTask' ,'createTask')->name('createTask');
+Route::get('/createTask' ,'createTask')->name('createTask');
 Route::get('/taskList' ,'taskList')->name('taskList');
 //Route::post('/taskStore' ,'store')->name('taskStore');
 //Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');

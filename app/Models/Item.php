@@ -10,6 +10,6 @@ class Item extends Model
     use HasFactory;
     public function categories()
     {
-        return $this->hasMany(Category::class);
+        return $this->hasMany(Category::class,"category_id","category");
     }
 }

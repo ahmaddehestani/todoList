@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->dateTime('createTime');
-            $table->string('status');
+            $table->enum('status', ['Pending', 'Wait', 'reminding','done'])->default('Pending');
             $table->dateTime('statusTime');
             $table->integer('category');
 
