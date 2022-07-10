@@ -29,4 +29,13 @@ class ItemController extends Controller
            Item::createOrExist($task);
          return redirect()->route('todo.taskList');
          }
+
+
+
+
+
+
+         public function about () {
+          return view('about');
+        }
 }

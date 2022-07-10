@@ -25,7 +25,7 @@ Route::controller(ItemController::class)
         ->name('todo.')
         ->group(function(){
         
-//Route::get('/about','about')->name('about');
+Route::get('/about','about')->name('about');
 //Route::get('/editTask','edit')->name('edit');
 Route::get('/createTask' ,'createTask')->name('createTask');
 Route::get('/taskList' ,'taskList')->name('taskList');
