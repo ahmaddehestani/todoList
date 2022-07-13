@@ -24,7 +24,7 @@ Route::controller(ItemController::class)
         ->prefix('/todos')
         ->name('todo.')
         ->group(function(){
-                Route::get('/test','test')->name('test');
+          
 Route::get('/about','about')->name('about');
 //Route::get('/editTask','edit')->name('edit');
 Route::get('/createTask' ,'createTask')->name('createTask');

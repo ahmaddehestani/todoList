@@ -10,11 +10,7 @@ use App\Http\Requests\CreateItemRequest;
 
 class ItemController extends Controller
 {
-    public function taskList(){
-        // $tasks = Item::with('category')->get();
-        $tasks= Item::all();
-        return view('taskList', ["tasks"=>$tasks]);
-      }
+    
       public function createTask () {
         return view('createItem');
       }
@@ -37,6 +33,13 @@ class ItemController extends Controller
           
           $cat= Category::find(2)->items;
           return response()->json([$cat],status:200);
+        }
+        public function taskList () {
+
+          $result=Category::join('items', 'categories.id','=','items.category_id')
+          ->get(['items.id','items.title as title','items.description','items.createTime','items.status','items.statusTime','categories.title as category_id']);
+        
+        return view('taskList', ["tasks"=>$result]);
         }
 
          public function about () {
