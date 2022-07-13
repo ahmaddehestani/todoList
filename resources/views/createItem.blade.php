@@ -41,8 +41,8 @@
     <input type="text" name="statusTime" id="statusTime" required>
 
     </br></br></br>
-    <label for="category"> your category</label> 
-    <input type="text" name="category" id="category" required>
+    <label for="category_id"> your category</label> 
+    <input type="text" name="category_id" id="category_id" required>
 
 
 

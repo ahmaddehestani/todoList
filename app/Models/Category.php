@@ -9,8 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function item()
+    public function items()
     {
-        return $this->belongsTo(Item::class,"item_id");
+           
+        return $this->hasMany(Item::class);
+
     }
 }

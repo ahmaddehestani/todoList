@@ -33,7 +33,7 @@ class CreateItemRequest extends FormRequest
              ],
             'createTime'=>'required',
             'statusTime'=>'required',
-            'category'=>'required',
+            'category_id'=>'required',
             
         ];
     }

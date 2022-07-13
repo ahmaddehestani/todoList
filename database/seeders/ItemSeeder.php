@@ -22,40 +22,40 @@ class ItemSeeder extends Seeder
         $dateNow = $dt->toDateTimeString();
         $users = [
             [
-                "item_id" => 1,
+                "id" => 1,
                 "title" => "study1",
                 "description" => "study php2",
                 "createTime"=>$dateNow,
                 "status" => "pending",
                 "statusTime"=>$dateNow,
-                "category"=>1
+                "category_id"=>1
             ],
             [
-                "item_id" => 2,
+                "id" => 2,
                 "title" => "study2",
                 "description" => "study php2",
                 "createTime"=>$dateNow,
                 "status" => "pending",
                 "statusTime"=>$dateNow,
-                "category"=>1
+                "category_id"=>1
             ],
             [
-                "item_id" => 3,
+                "id" => 3,
                 "title" => "play1",
                 "description" => "football",
                 "createTime"=>$dateNow,
                 "status" => "pending",
                 "statusTime"=>$dateNow,
-                "category"=>2
+                "category_id"=>2
             ],
             [
-                "item_id" => 4,
+                "id" => 4,
                 "title" => "play2",
                 "description" => "volleyball",
                 "createTime"=>$dateNow,
                 "status" => "pending",
                 "statusTime"=>$dateNow,
-                "category"=>2
+                "category_id"=>2
             ]
         ];
      

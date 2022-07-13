@@ -29,17 +29,17 @@ tr:nth-child(even) {
     <th>createTime</th>
     <th>status</th>
     <th>statusTime</th>
-    <th>category</th>
+    <th>category_id</th>
   </tr>
   @foreach($tasks as $task)
   <tr>
-  <td> {{$task->item_id}}</td>
+  <td> {{$task->id}}</td>
   <td> {{$task->title}}</td>
   <td>{{$task->description}}</td>
   <td>{{$task->createTime}}</td>
   <td>{{$task->status}} </td>
   <td>{{$task->statusTime}}</td>  
-  <td>{{$task->category}}</td>   
+  <td>{{$task->category_id}}</td>   
     </tr>
   @endforeach
  

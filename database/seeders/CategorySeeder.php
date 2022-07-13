@@ -17,12 +17,12 @@ class CategorySeeder extends Seeder
     {
         $users = [
             [
-                "category_id" => 1,
+                "id" => 1,
                 "title" => "indoor",
                 
             ],
             [
-                "category_id" => 2,
+                "id" => 2,
                 "title" => "outdoor",
                 
             ]

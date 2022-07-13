@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id('item_id');
+            $table->id();
             $table->timestamps();
             
             $table->string('title');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->dateTime('createTime');
             $table->enum('status', ['Pending', 'Wait', 'reminding','done'])->default('Pending');
             $table->dateTime('statusTime');
-            $table->integer('category');
+            $table->integer('category_id');
 
         });
     }

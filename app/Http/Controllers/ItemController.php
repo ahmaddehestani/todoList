@@ -11,8 +11,8 @@ use App\Http\Requests\CreateItemRequest;
 class ItemController extends Controller
 {
     public function taskList(){
-        $tasks = Item::with('categories')->get();
-        //$tasks= Item::all();
+        // $tasks = Item::with('category')->get();
+        $tasks= Item::all();
         return view('taskList', ["tasks"=>$tasks]);
       }
       public function createTask () {
@@ -25,7 +25,7 @@ class ItemController extends Controller
            $task->status=$request->status;
            $task->createTime=$request->createTime;
            $task->statusTime=$request->statusTime;
-           $task->category=$request->category;
+           $task->category_id=$request->category_id;
            Item::createOrExist($task);
          return redirect()->route('todo.taskList');
          }
@@ -33,7 +33,11 @@ class ItemController extends Controller
 
 
 
-
+         public function test () {
+          
+          $cat= Category::find(2)->items;
+          return response()->json([$cat],status:200);
+        }
 
          public function about () {
           return view('about');
