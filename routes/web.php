@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -34,6 +35,19 @@ Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');
 Route::post('/findOne','findOne')->name('findOne');
 Route::post('/remove' ,'remove')->name('remove');
 Route::get('/findTask' ,'search')->name('search'); 
+
+});
+Route::controller(CategoryController::class)
+        ->prefix('/category')
+        ->name('category.')
+        ->group(function(){
+          
+
+
+Route::get('/create' ,'createCategory')->name('createCategory');
+Route::get('/list' ,'categoryList')->name('categoryList');
+Route::post('/store' ,'store')->name('taskStore');
+
 
         });
 
