@@ -46,7 +46,7 @@ Route::controller(CategoryController::class)
 
 Route::get('/create' ,'createCategory')->name('createCategory');
 Route::get('/list' ,'categoryList')->name('categoryList');
-Route::post('/store' ,'store')->name('taskStore');
+Route::post('/store' ,'store')->name('store');
 
 
         });

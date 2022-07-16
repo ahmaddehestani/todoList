@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    protected $fillable=['title'];
+
+
+    public static function createOrExist($data){
+        self::firstorcreate(['title'=>$data->title],['title'=>$data->title]);
+  return true;
+      }
 
     public function items()
     {

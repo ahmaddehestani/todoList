@@ -18,8 +18,8 @@ body {font-family: "Amatic SC", sans-serif}
 <a href="http://127.0.0.1:8000/todos/taskList" class="w3-bar-item w3-button">TASK LIST</a>
 <a href="http://127.0.0.1:8000/todos/editTask" class="w3-bar-item w3-button">EDIT TASK</a>
 <a href="http://127.0.0.1:8000/todos/findTask" class="w3-bar-item w3-button">SEARCH TASK</a>
-<a href="http://127.0.0.1:8000/todos/findTask" class="w3-bar-item w3-button">CREATE CATEGORY</a>
-<a href="http://127.0.0.1:8000/todos/findTask" class="w3-bar-item w3-button">LIST CATEGORY</a>
+<a href="http://127.0.0.1:8000/category/create" class="w3-bar-item w3-button">CREATE CATEGORY</a>
+<a href="http://127.0.0.1:8000/category/list" class="w3-bar-item w3-button">LIST CATEGORY</a>
 
 
 

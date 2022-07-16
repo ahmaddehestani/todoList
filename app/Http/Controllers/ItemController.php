@@ -16,6 +16,8 @@ class ItemController extends Controller
       public function createTask () {
         return view('item.createItem');
       }
+
+      
       public function store(CreateItemRequest $request){
         $task = new Item();
           $task->title=$request->title;
@@ -36,6 +38,8 @@ class ItemController extends Controller
           $cat= Category::find(2)->items;
           return response()->json([$cat],status:200);
         }
+
+
         public function taskList () {
 
           $result=Category::join('items', 'categories.id','=','items.category_id')
@@ -44,9 +48,9 @@ class ItemController extends Controller
         return view('item.taskList', ["tasks"=>$result]);
         }
 
+
         public function taskUpdate(){
           $id=request('id');
-      
           $dt = Carbon::now();
           $dateNow = $dt->toDateTimeString();
 
@@ -65,27 +69,20 @@ class ItemController extends Controller
           $description=request('description');
           Item::query()->where('id',$id)->update(['description'=>$description]);
         }
-          
-  
-        
-  
-     
           return redirect()->route('todo.taskList');
-        
-      
       }
+
+
       public function findOne(){
         $id=request('id');
-       
       $task=Item::find($id);
-
-    
       if($task){
       return view('item.findOne',['task'=>$task]);
       }else{
           return redirect()->route('todo.taskList');
       }
     }
+
     public function remove(){
       $id=request('id');
      
