@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
 use App\Http\Requests\CreateItemRequest;
+use Carbon\Carbon;
 
 
 class ItemController extends Controller
@@ -42,7 +43,44 @@ class ItemController extends Controller
         return view('taskList', ["tasks"=>$result]);
         }
 
+        public function taskUpdate(){
+          $id=request('id');
+      
+          $dt = Carbon::now();
+          $dateNow = $dt->toDateTimeString();
+
+         if(request('title')){
+          $title=request('title');
+          Item::query()->where('id',$id)->update(['title'=>$title]);
+        }
+        if(request('status')){
+          $status=request('status');
+          if($status=='done'){
+            
+          Item::query()->where('id',$id)->update(['status'=>$status,'statusTime'=>$dateNow]);
+          }
+        }
+        if(request('description')){
+          $description=request('description');
+          Item::query()->where('id',$id)->update(['description'=>$description]);
+        }
+          
+  
+        
+  
+          // $task = Item::query()->where('id',$id)->update(['title'=>$title,'description'=>$description,'status'=>$status]);
+  
+      error_log("id do");
+     
+          return redirect()->route('todo.taskList');
+        
+      
+      }
+
          public function about () {
           return view('about');
+        }
+        public function edit () {
+          return view('edit');
         }
 }

@@ -18,6 +18,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
         });
+        //   if(Schema::hasTable('items'))
+        //     Schema::table('items',function(Blueprint $table){
+        //         $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+        //     });
+        
     }
 
     /**
