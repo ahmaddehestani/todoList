@@ -6,9 +6,9 @@
 ## this app help you to create your daily task to done.
 
 
-# database: mysql
-# program language: php
-# framework: laravel
+### database: mysql
+### program language: php
+### framework: laravel
 
 ## 2 tables use in project
 1. [items](#task-info)
