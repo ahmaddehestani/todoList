@@ -14,7 +14,7 @@ class ItemController extends Controller
 {
     
       public function createTask () {
-        return view('createItem');
+        return view('item.createItem');
       }
       public function store(CreateItemRequest $request){
         $task = new Item();
@@ -41,7 +41,7 @@ class ItemController extends Controller
           $result=Category::join('items', 'categories.id','=','items.category_id')
           ->get(['items.id','items.title as title','items.description','items.createTime','items.status','items.statusTime','categories.title as category_id']);
         
-        return view('taskList', ["tasks"=>$result]);
+        return view('item.taskList', ["tasks"=>$result]);
         }
 
         public function taskUpdate(){
@@ -69,9 +69,6 @@ class ItemController extends Controller
   
         
   
-          // $task = Item::query()->where('id',$id)->update(['title'=>$title,'description'=>$description,'status'=>$status]);
-  
-      error_log("id do");
      
           return redirect()->route('todo.taskList');
         
@@ -84,7 +81,7 @@ class ItemController extends Controller
 
     
       if($task){
-      return view('findOne',['task'=>$task]);
+      return view('item.findOne',['task'=>$task]);
       }else{
           return redirect()->route('todo.taskList');
       }
@@ -98,12 +95,12 @@ class ItemController extends Controller
 }
 
          public function about () {
-          return view('about');
+          return view('item.about');
         }
         public function edit () {
-          return view('edit');
+          return view('item.edit');
         }
         public function search() {
-          return view('search');
+          return view('item.search');
         }
 }
