@@ -31,9 +31,9 @@ Route::get('/createTask' ,'createTask')->name('createTask');
 Route::get('/taskList' ,'taskList')->name('taskList');
 Route::post('/taskStore' ,'store')->name('taskStore');
 Route::post('/taskUpdate','taskUpdate')->name('taskUpdate');
-//Route::post('/findOne','findOne')->name('findOne');
-//Route::post('/remove' ,'remove')->name('remove');
-//Route::get('/findTask' ,'search')->name('search'); 
+Route::post('/findOne','findOne')->name('findOne');
+Route::post('/remove' ,'remove')->name('remove');
+Route::get('/findTask' ,'search')->name('search'); 
 
         });
 

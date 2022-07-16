@@ -15,6 +15,11 @@ class Item extends Model
   return true;
       }
 
+      public static function destroy($id){
+        $task = self::findOrFail($id);
+      $task->delete();
+        }
+
 
     public function category()
     {

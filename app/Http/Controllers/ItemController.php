@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\Category;
 use App\Http\Requests\CreateItemRequest;
 use Carbon\Carbon;
+use App\Http\Requests\UpdateRequest;
 
 
 class ItemController extends Controller
@@ -76,11 +77,33 @@ class ItemController extends Controller
         
       
       }
+      public function findOne(){
+        $id=request('id');
+       
+      $task=Item::find($id);
+
+    
+      if($task){
+      return view('findOne',['task'=>$task]);
+      }else{
+          return redirect()->route('todo.taskList');
+      }
+    }
+    public function remove(){
+      $id=request('id');
+     
+      Item::destroy($id);
+      return redirect()->route('todo.taskList');
+
+}
 
          public function about () {
           return view('about');
         }
         public function edit () {
           return view('edit');
+        }
+        public function search() {
+          return view('search');
         }
 }
