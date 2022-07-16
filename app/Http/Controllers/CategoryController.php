@@ -18,4 +18,11 @@ class CategoryController extends Controller
            Category::createOrExist($category);
          return redirect()->route('category.categoryList');
          }
+
+         public function categoryList () {
+
+            $result=Category::all();
+          
+          return view('category.list', ["categories"=>$result]);
+          }
 }
